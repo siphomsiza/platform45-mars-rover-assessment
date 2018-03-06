@@ -8,7 +8,7 @@
   * rails-5.1.1
 
 == Demo on Heroku
-{Lines Website}[https://next45-mars-rover-assessment.herokuapp.com], or see it in action: https://next45-mars-rover-assessment.herokuapp.com.
+{Lines Website}[https://github.com/siphomsiza/platform45-mars-rover-assessment], or see it in action: https://next45-mars-rover-assessment.herokuapp.com.
 
 * Mars rover challenge
   Rovers have been sent to Mars to survey the terrain and you have been charged with
@@ -30,7 +30,7 @@
   rover and its resulting location sent back to HQ. This is an example of the list of
   commands sent to the rover:
 == Rover Graph
-{<img src="https://github.com/siphomsiza/next45-mars-rover-assessment/blob/master/public/images/rover.png" />}[https://github.com/siphomsiza/next45-mars-rover-assessment/blob/master/public/images/rover.png]
+{<img src="https://github.com/siphomsiza/platform45-mars-rover-assessment/blob/master/public/images/rover.png" />}[https://github.com/siphomsiza/platform45-mars-rover-assessment/blob/master/public/images/rover.png]
 
 * X position size zones is a width of Rover Graph
 * Y position size zones is a height of Rover Graph

@@ -1,0 +1,12 @@
+//$("#rover_form").html("<%= escape_javascript (render 'form', :rover => @rover ) %>")
+window.location.reload();
+<%if @rover.errors.empty?%>
+  <%while @rover.step < @rover.instruction.length do %>
+    <% @rover.rover_step_go%>
+    <%@rover.reload%>
+    <%flash[:success] = "submited rover challenge instruction #{@rover.instruction.split('').[]0..@rover.step-1}"%>
+    $("#rover_form").html("<%= escape_javascript (render 'form', :rover => @rover ) %>")
+  <%end %>
+<%else%>
+  $("#rover_form").html("<%= escape_javascript (render 'form', :rover => @rover ) %>")
+<%end%>

@@ -1,0 +1,4 @@
+$ ->
+  $('.selectize').selectize
+    maxItems: null
+

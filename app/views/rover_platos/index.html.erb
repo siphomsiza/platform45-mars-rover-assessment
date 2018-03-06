@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xs-14">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-2">
+            <%= form_with(model: RoverPlato.new, local: true) do |f| %>
+              <%= f.submit "Start New Rover",class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong><span class="glyphicon glyphicon-th"></span> Rover Platos</strong>
+      </div>
+      <table class="table">
+        <thead>
+          <th>#</th>
+          <th>X position size zones</th>
+          <th>Y position size zones</th>
+          <th>Direction</th>
+          <th>X position start</th>
+          <th>Y position</th>
+          <th>Instruction</th>
+          <th>Position & Direction</th>
+          <th>Step</th>
+          <th>&nbsp;</th>
+        </thead>
+        <tbody>
+          <% @rover_platos.each_with_index do |rover_plato, index| %>
+            <tr>
+              <td><%= rover_plato.id %></td>
+              <td><%= rover_plato.x_position_size %></td>
+              <td><%= rover_plato.y_position_size %></td>
+              <td><%= rover_plato.try(:rover).try(:direction) %></td>
+              <td><%= rover_plato.try(:rover).try(:x_position) %></td>
+              <td><%= rover_plato.try(:rover).try(:y_position) %></td>
+              <td><%= rover_plato.try(:rover).try(:instruction) %></td>
+              <td>
+                <%= [rover_plato.try(:rover).try(:x_position),rover_plato.try(:rover).try(:y_position),rover_plato.try(:rover).try(:direction)].join(",")%>
+              </td>
+              <td><%= rover_plato.try(:rover).try(:step) %></td>
+
+              <td align="right">
+                <%if rover_plato.rover%>
+                  <%=link_to raw('<i class="fa fa-eye" aria-hidden="true"></i> view plato rovers'),  edit_rover_plato_rover_path(rover_plato,rover_plato.rover), class: 'btn btn-success btn-xs' %>
+                <%end%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= will_paginate @rover_platos, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

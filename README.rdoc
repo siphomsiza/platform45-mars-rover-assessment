@@ -1,0 +1,58 @@
+== README
+
+{<img src="https://badge.fury.io/rb/lines-engine.svg" alt="Gem Version" />}[http://badge.fury.io/rb/lines-engine]
+== Ruby Version
+  * ruby-2.4.0
+
+== Rails Version
+  * rails-5.1.1
+
+== Demo on Heroku
+{Lines Website}[https://next45-mars-rover-assessment.herokuapp.com], or see it in action: https://next45-mars-rover-assessment.herokuapp.com.
+
+* Mars rover challenge
+  Rovers have been sent to Mars to survey the terrain and you have been charged with
+  creating their navigation system. These are the specifications you have been given:
+
+* Mars`s surface has been divided into zones and each zone can be modelled as a two-
+  dimensional cartesian grid. The zones have been very carefully surveyed ahead of
+  time and are deemed safe for exploration within the zone`s bounds, as represented
+  by a single cartesian coordinate. E.g: (5, 5)
+
+* The rover understands the cardinal points and can face either East (E), West (W),
+  North (N) or South (S)
+* The rover understands three commands:
+  * M - Move one space forward in the direction it is facing
+  * R - rotate 90 degrees to the right
+  * L - rotate 90 degrees to the left
+* Due to the transmission delay in communicating with the rover on Mars, you are only
+  able to send the rover a list of commands. These commands will be executed by the
+  rover and its resulting location sent back to HQ. This is an example of the list of
+  commands sent to the rover:
+== Rover Graph
+{<img src="https://github.com/siphomsiza/next45-mars-rover-assessment/blob/master/public/images/rover.png" />}[https://github.com/siphomsiza/next45-mars-rover-assessment/blob/master/public/images/rover.png]
+
+* X position size zones is a width of Rover Graph
+* Y position size zones is a height of Rover Graph
+* X position start at position staring for width of Rover Graph
+* Y position staring for height of Rover Graph
+* Direction staring for direction of Rover Graph e.g (East (E), West (W),
+  North (N) or South (S))
+* Instruction and Maximum charectors is 20
+  * M - Move one space forward in the direction it is facing
+  * R - rotate 90 degrees to the right
+  * L - rotate 90 degrees to the left
+* TEST INPUTS
+  * 5 5
+
+  * 1 2 N
+
+  * LMLMLMLMM
+
+  * 3 3 E
+
+  * MMRMMRMRRM
+* Expected Output
+  * 1 3 N
+
+  * 5 1 E

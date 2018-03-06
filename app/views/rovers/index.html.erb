@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-xs-14">
+    <div class="row">
+      <div class="col-md-2">
+        <%= form_with(model: RoverPlato.new, local: true) do |f| %>
+          <%= f.submit "Start New Rover",class: "btn btn-default" %>
+        <% end %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to raw('<i class="fa fa-list"></i> List Rover Platos'), rover_platos_path(), class: 'btn btn-default' %>
+      </div>
+
+    </div>
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong><span class="glyphicon glyphicon-th"></span> Rovers</strong>
+      </div>
+      <table class="table">
+        <thead>
+          <th>#</th>
+          <th>X position size zones</th>
+          <th>Y position size zones</th>
+          <th>Direction</th>
+          <th>X position start</th>
+          <th>Y position</th>
+          <th>Instruction</th>
+          <th>Position & Direction</th>
+          <th>Step</th>
+          <th>&nbsp;</th>
+        </thead>
+        <tbody>
+          <% @rovers.each_with_index do |rover, index| %>
+            <tr>
+              <td><%= "#{index + 1}" %></td>
+              <td><%= rover.rover_plato.x_position_size %></td>
+              <td><%= rover.rover_plato.y_position_size %></td>
+              <td><%= rover.direction %></td>
+              <td><%= rover.x_position %></td>
+              <td><%= rover.y_position %></td>
+              <td><%= rover.instruction %></td>
+              <td>
+                <%= [rover.x_position,rover.y_position,rover.direction].join(",")%>
+              </td>
+              <td><%= rover.step %></td>
+              <td align="right">
+                <%=link_to raw('<i class="fa fa-eye" aria-hidden="true"></i> view'), edit_rover_plato_rover_path(@rover_plato,rover), class: 'btn btn-success btn-xs' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

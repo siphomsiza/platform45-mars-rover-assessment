@@ -1,0 +1,170 @@
+<% unless (@rover.step == 0) && flash.empty? %>
+  <script type="text/javascript">
+    <% flash.each do |f| %>
+      <% type = f[0].to_s.gsub('alert', 'error') %>
+      toastr['<%= type %>']("<%= f[1] %>");
+    <% end %>
+  </script>
+<% end %>
+<div id="rover_form">
+  <%= form_for([@rover_plato,@rover],remote: true ,:html =>{id: "rover_form"}) do |form| %>
+    <% if @rover.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@rover.errors.count, "error") %> prohibited this rover from being saved:</h2>
+        <ul>
+        <% @rover.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="main main_table">
+          <%if flash.empty?%>
+          <style>
+            #toast-container > div {
+              margin: 100px 50px 10px;
+              width: 1165px;
+            }
+          </style>
+          <script type="text/javascript">
+            toastr.options = {
+              "closeButton": true,
+              "debug": false,
+              "newestOnTop": false,
+              "progressBar": true,
+              "positionClass": "toast-top-right",
+              "preventDuplicates": false,
+              "onclick": null,
+              "showDuration": "300000000",
+              "hideDuration": "100000000",
+              "timeOut": "50000",
+              "extendedTimeOut": "1000",
+              "showEasing": "swing",
+              "hideEasing": "linear",
+              "showMethod": "fadeIn",
+              "hideMethod": "fadeOut"
+            }
+            toastr.info('Instruction Information values<br/><ul><li>M - Move one space forward in the direction it is facing</li><li>R - rotate 90 degrees to the right</li><li>L - rotate 90 degrees to the left</li></ul>')
+            var element = document.getElementById('toast-container');
+            element.className += " informations" ;
+          </script>
+          <%end%>
+          <table width="100%">
+            <%if @rover_plato.y_position_size && @rover_plato.x_position_size%>
+              <%(@rover_plato.y_position_size-1).downto(0) do |i|%>
+                <tr>
+                  <%0.upto(@rover_plato.x_position_size-1) do |j|%>
+                    <td><i class="<%= rover_plato_position(j, i)%>" aria-hidden="true"></i></td>
+                  <%end%>
+                </tr>
+              <%end%>
+            <%end%>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class='sidebar'>
+          <div class="sidebar_top">
+            <p class="sidebar_title">Information about Platform45 Mars Rovers Challenge</p>
+            <p class="information">
+              <ul>
+                <li>Instruction: <%= @rover.reload.instruction%></li>
+                <li>Done:
+                  <%if started?%>
+                    <%= @rover.instruction.split('').[]0..@rover.step-1 %>
+                  <%else%>
+                    -
+                  <%end%>
+                </li>
+                <li>Step: <%= @rover.step%></li>
+                <li>Position: <%= [@rover.x_position,@rover.y_position].join(",")%></li>
+                <li>Direction: <%= @rover.direction%></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-8">
+         <%= form.fields_for :rover_plato ,form.object.rover_plato do |f| %>
+           <div class="row">
+             <div class="col-md-6">
+               <div class="col-md-12 ui-sortable">
+                 <div class="form-group">
+                   <%= f.label :x_position_size_zones%>
+                   <%= f.text_field :x_position_size , class: "form-control"%>
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-6">
+               <div class="col-md-12 ui-sortable">
+                 <div class="form-group">
+                   <%= f.label :y_position_size_zones %>
+                   <%= f.text_field :y_position_size , class: "form-control"%>
+                 </div>
+               </div>
+             </div>
+          </div>
+        <%end%>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12 ui-sortable">
+              <div class="form-group">
+                <%= form.label :x_position_start_at_position %>
+                <%= form.text_field :x_position , class: "form-control"%>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12 ui-sortable">
+              <div class="form-group">
+                <%= form.label :y_position %>
+                <%= form.text_field :y_position , class: "form-control"%>
+              </div>
+            </div>
+          </div>
+       </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12 ui-sortable">
+            <div class="form-group">
+              <%= form.label :direction %>
+              <%= form.text_field :direction , class: "form-control"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 ui-sortable">
+            <div class="form-group">
+              <%= form.label :instruction %>
+              <%= form.text_field :instruction , class: "form-control",placeholder: "Please enter instruction e.g LMLMLMLMM"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 ui-sortable">
+            <div class="form-group">
+                <%= form.submit "Submit Rover Challenge",class: "btn btn-primary pull-left",id: "submit_rover",:disabled => (@rover.instruction && @rover.step == @rover.instruction.length ? true : false) %>
+              <% end %>
+              <%= form_with(model: RoverPlato.new, local: true) do |f| %>
+                <%= f.submit "Start New Rover",class: "btn btn-primary pull-right" %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+<%= javascript_include_tag "rover", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "toastr", "data-turbolinks-track" => true %>

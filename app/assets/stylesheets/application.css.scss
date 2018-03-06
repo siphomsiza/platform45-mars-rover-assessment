@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+
+
+
+ *=  	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+ *= require core
+ *=  	<!-- ================== END BASE CSS STYLE ================== -->
+
+
+
+ *= <!-- ================== BEGIN COLOR ADMIN PAGE LEVEL STYLE ================== -->
+ *= require color_admin_page_level
+ *=	<!-- ================== END  COLOR ADMIN  PAGE LEVEL STYLE ================== -->
+
+ *= require helper_classes
+ *= require custom
+ *= require note
+ *= require font-awesome
+ *= require toastr
+ // ===========================
+ *= require home_page/bootstrap/css/bootstrap-theme.css
+ *= require home_page/bootstrap/css/bootstrap.min.css
+ *= require home_page/css/style.css
+ *= require home_page/font-awesome/css/font-awesome.min.css
+ *= require home_page/css/flexslider.css
+ *= require home_page/css/animate.css
+ *= require home_page/css/owl.carousel.css
+ *= require home_page/css/owl.theme.css
+ *= require home_page/css/yamm.css
+ *= require home_page/css/magnific-popup.css
+ *= require home_page/css/sweetalert.css
+ *= require home_page/css/navigation-tap.css
+
+ */

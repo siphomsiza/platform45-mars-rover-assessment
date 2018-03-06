@@ -1,0 +1,51 @@
+<h1>Rover Plato</h1>
+<div class="row">
+  <div class="col-md-8"></div>
+  <div class="col-md-4">
+    <div class='sidebar'>
+      <div class="sidebar_top">
+        <p class="sidebar_title">Platform45 Mars Rovers Challenge</p>
+        <p class="information">
+          Rovers have been sent to Mars to survey the terrain and you have been charged with
+          creating their navigation system
+          <ul>
+            <li>
+              Mars’s surface has been divided into zones and each zone can be modelled as a two-
+              dimensional cartesian grid. The zones have been very carefully surveyed ahead of
+              time and are deemed safe for exploration within the zone’s bounds, as represented
+              by a single cartesian coordinate. E.g: (5, 5)
+            </li>
+            <li>
+              The rover understands the cardinal points and can face either East (E), West (W),
+              North (N) or South (S)
+            </li>
+            <li>
+              The rover understands three commands:
+              <ul>
+                <li>M - Move one space forward in the direction it is facing</li>
+                <li>R - rotate 90 degrees to the right</li>
+                <li>L - rotate 90 degrees to the left</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-8"></div>
+  <div class="col-md-2">
+    <%= form_with(model: @rover_plato, local: true) do |form| %>
+      <div class="actions">
+        <%= form.submit "Start Rover Challenge",class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to raw('<i class="fa fa-list"></i> List Rover Platos'), rover_platos_path(), class: 'btn btn-default' %>
+  </div>
+</div>
+
+<%#= render 'form', rover_plato: @rover_plato %>

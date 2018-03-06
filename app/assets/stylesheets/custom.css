@@ -1,0 +1,180 @@
+
+.login .login-header .brand img.logo-image {
+  width: 90px;
+  height: 70px;
+  margin-top: -15px;
+  border-radius: 5px;
+}
+
+.login .login-header .brand span  {
+  color: #F8504B;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+
+.navbar-header .navbar-brand img.logo-image {
+  width: 70px;
+  height: 50px;
+  display: inline-block;
+  margin-top: -10px;
+  border-radius: 5px;
+}
+
+
+.navbar-header .navbar-brand  span  {
+  color: #F8504B;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+#main-content .nav-tabs{
+  border: 1px solid #ddd;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+}
+
+#list table{
+  margin-top: 20px;
+}
+
+.table th.header[data-href],.table th.header[href]{
+  cursor:pointer;
+  color: #337ab7;
+}
+
+.table th.headerSortUp:after{
+  content: "\25b2";
+  padding-left: 5px;
+}
+
+.table th.header.headerSortDown:after{
+  content: "\25bc";
+  padding-left: 5px;
+}
+.omniauth_providers{
+  margin-left: 90px;
+}
+.fields fieldset{
+  padding-left: 5px;
+}
+.login{
+  padding: 30px 0px;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 90px;
+}
+.container>.navbar-header {
+  margin-right: 0;
+  margin-left: 0px;
+  padding-left: 14px;
+}
+.container>.navbar-header div {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 30px;
+  line-height: 20px;
+  font-style: normal;
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+.container>.navbar-header .outside {
+  font-weight: 700;
+  color: black !important;
+  font-size: 17px;
+  line-height: 20px;
+  font-style: normal;
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+.navbar-fixed-top>.container{
+  background: #2d353c;
+}
+#friendly_grid table{
+  border-collapse: collapse;
+  width: 100%;
+}
+#friendly_grid td{
+  	border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+#enemy_grid table{
+  width: 100%;
+}
+#enemy_grid td{
+  	border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+#enemy_grid {
+    border-right: 2px solid black;
+}
+#friendly_grid td.miss {
+    background-color: #aaa;
+}
+td.sunk {
+    background-color: #005500;
+}
+td.miss {
+    background-color: red;
+}
+td.hit {
+    background-color: green;
+}
+.navbar-collapse> a {
+    margin-top: 10px;
+}
+div.main {
+  position: relative;
+  top: 0px;
+  right: 300px;
+  left: 0%;
+  min-width: 300px;
+  padding: 1em;
+  padding-top: 20px;
+}
+img.plato {
+    position: relative;
+    width: 50%;
+    padding: 5%;
+}
+div.sidebar {
+    position: relative;
+    /*top: 230px;*/
+    right: 0px;
+    width: 300px;
+    padding: 0px;
+    /*padding-top: 20px;*/
+    background: none repeat scroll 0% 0% transparent;
+}
+p.information {
+  color: #2C699D;
+}
+p.sidebar_title {
+  color: #2C699D;
+  font-size: 14px;
+  font-weight: bold;
+}
+div.sidebar_top {
+    padding: 15px;
+    border: 5px solid #AAA;
+    vertical-align: top;
+    background: none repeat scroll 0% 0% #000;
+    min-height: 400px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #2C699D;
+}
+div.main_table {
+    border: 5px solid #AAA;
+    background: none repeat scroll 0% 0% #000;
+    border-radius: 5px;
+}
+i.fa-times ,i.fa-arrow-down,i.fa-arrow-left,i.fa-arrow-up ,i.fa-arrow-right{
+    color: white;
+}

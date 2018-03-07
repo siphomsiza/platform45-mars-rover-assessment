@@ -8,7 +8,10 @@
   * rails-5.1.1
 
 == Demo on Heroku
-{Lines Website}[https://github.com/siphomsiza/platform45-mars-rover-assessment], or see it in action: https://next45-mars-rover-assessment.herokuapp.com.
+{Lines Website}[https://platform45-mars-rover.herokuapp.com], or see it in action: https://platform45-mars-rover.herokuapp.com
+
+== Source Code on Github
+{Lines Website}[https://github.com/siphomsiza/platform45-mars-rover-assessment], or see it in action: https://github.com/siphomsiza/platform45-mars-rover-assessment
 
 * Mars rover challenge
   Rovers have been sent to Mars to survey the terrain and you have been charged with

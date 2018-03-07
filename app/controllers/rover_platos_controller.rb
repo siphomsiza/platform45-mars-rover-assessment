@@ -5,7 +5,6 @@ class RoverPlatosController < ApplicationController
   # GET /rover_platos.json
   def index
     @rover_platos = RoverPlato.paginate(page: params[:page], per_page: 10)
-
   end
 
   # GET /rover_platos/1
@@ -72,6 +71,6 @@ class RoverPlatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rover_plato_params
-      params.fetch(:rover_plato, {})
+      params.require(:rover_plato).permit(:x_position_size, :y_position_size)
     end
 end
